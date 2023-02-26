@@ -1,0 +1,92 @@
+<HTML>
+
+<HEAD>
+<link rel="stylesheet" type="text/css" href="Style.css">
+<TITLE>Place Your Order</TITLE>
+<script language="javascript" type="text/javascript">
+function price()
+{
+var a=document.getElementById("item").value;
+var b=Number(document.getElementById("quantity").value);
+if(a=="Chicken Biryani")
+{
+	cost=b*250;
+}
+if(a=="Veg Pizza")
+{
+	cost=b*120;
+}
+if(a=="Chicken Pizza")
+{
+	cost=b*150;
+}
+if(a=="Paneer Butter Masala")
+{
+	cost=b*180;
+}
+if(a=="Roti")
+{
+	cost=b*20;
+}
+alert("Your total cost is "+cost);
+document.getElementById("cost").value= cost;
+}
+function Confrim()
+{
+	alert("Your Order has been successfully placed");
+}
+</script>
+</HEAD>
+
+
+<body class="back">
+<h1>Place Your Order</h1>
+<p>Please fill the given details to place your order</p>
+<form action="" method="GET">
+<table border="0" cellspacing="15">
+<tr>
+<td>Name:</td>
+<td><input type="text" name="name" placeholder="Enter full name" size="40" maxsize="60"></td>
+</tr>
+<tr>
+<td>Phone Number:</td>
+<td><input type="text" name="phoneno" placeholder="017xxxxxxxx" size="40" maxsize="60"></td>
+</tr>
+<tr>
+<td>Email:</td>
+<td><input type="text" name="email" placeholder="sample@example.com" size="40" maxsize="60"></td>
+</tr>
+<tr>
+<td>Address:</td>
+<td><textarea rows="10" cols="60" name="address">Street:-  House:-  Road:-</textarea>
+</td></tr>
+<tr>
+<td>Items:</td>
+<td>
+  <select id="item">
+    <option>Select Items</option>
+    <option>Chicken Biryani</option>
+    <option>Veg Pizza</option>
+    <option>Chicken Pizza</option>
+    <option>Paneer Butter Masala</option>
+    <option>Roti</option>
+  </select></td></tr>
+<tr>
+<td>Quantity:</td>
+<td>
+  <select id="quantity">
+    <option>Select quantity</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select></td></tr>
+</table><br/><br/><br/>
+<input type="button" name="button" value="Click to check total price" onclick="price()"/><br/><br/>
+<label>Total Cost:</label><input type="text" id="cost" size="40" maxsize="60"><br/>
+<p>Click Ok to continue</p>
+<input type="button" name="button" value="Ok" onclick="Confrim()"/><br/><br/>
+</form>
+</body>
+</HTML>
